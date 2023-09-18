@@ -214,7 +214,7 @@ header {
   row-gap: 1.6667vw;
   margin: 1.6667vw 5vw;
 }
-.projects .projects_pictures .projects_show > img {
+.projects .projects_pictures .projects_show img {
   border-radius: 8px;
   max-width: 430px;
   z-index: 0;
@@ -227,7 +227,7 @@ header {
   filter: gray;
   /* IE 6-9 */
 }
-.projects .projects_pictures .projects_show > img:hover {
+.projects .projects_pictures .projects_show img:hover {
   z-index: 0;
   -webkit-filter: none;
   -moz-filter: none;
