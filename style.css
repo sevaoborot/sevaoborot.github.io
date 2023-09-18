@@ -1,0 +1,529 @@
+/*TEXT VARIABLES*/
+/*COLOR VARIABLES*/
+/*MIXINS*/
+.block_heading {
+  font-family: "Inter:800", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0px;
+}
+.body_text {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+}
+.subheading {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.subheading_bold {
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+/*STYLES*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  border: 0px;
+  background-color: #DDDDDD;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+header {
+  background-color: #141414;
+  height: 4.5rem;
+  width: 100vw;
+  position: fixed;
+  margin-top: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+.header_links {
+  display: flex;
+  width: 53.5rem;
+  height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75rem;
+  flex-shrink: 0;
+}
+.header_links a {
+  color: #BBBBBB;
+  text-decoration: none;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+}
+.header_links a:hover {
+  color: #00E016;
+}
+.welcome {
+  border-radius: 0.1875rem;
+  display: flex;
+  width: 100vw;
+  height: 27rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 72px;
+}
+.welcome .welcome_image {
+  display: flex;
+  flex-direction: column;
+  width: 88vw;
+  height: 384px;
+  background: url("img/welcome_bg.png"), lightgray 50% / cover no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+.welcome .welcome_image .welcome_heading {
+  font-family: "Inter:800", sans-serif;
+  font-size: 4.5rem;
+  color: #00E016;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.welcome .welcome_image .welcome_subheading {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 2.25rem;
+  color: #BBBBBB;
+  text-align: center;
+  margin-top: 0px;
+}
+.who-i-am {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 4.75rem;
+  background-color: #141414;
+  padding: 3rem 4.5rem;
+  align-content: center;
+}
+.who-i-am .who-i-am_image {
+  border-radius: 3px;
+  max-width: 100%;
+}
+.who-i-am .who-i-am_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6875rem;
+  justify-content: center;
+  width: 36.5278vw;
+}
+.who-i-am .who-i-am_container .who-i-am_heading {
+  font-family: "Inter:800", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0px;
+  color: #00E016;
+}
+.who-i-am .who-i-am_container .who-i-am_text {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+  color: #BBBBBB;
+  text-align: justify;
+}
+.heading_container {
+  background-image: url(img/Ellipses.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  margin-bottom: 0px;
+  width: 44vw;
+  height: 8.3333vw;
+}
+.heading_text {
+  font-family: "Inter:800", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0px;
+  color: #2E025B;
+}
+.heading_text.white-foreground {
+  color: #BBBBBB;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects .projects_nav {
+  display: flex;
+  width: 28.8889vw;
+  height: 3.3333vw;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+  margin: 1.6667vw 35.5556vw;
+  color: #141414;
+}
+.projects .projects_nav .project_nav_point {
+  border-bottom: 0px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* Граница включена внутрь размеров элемента */
+  padding: 10px;
+  /* Пространство между текстом и границей */
+  border: 2px solid transparent;
+  /* Граница начинается сразу, но изначально прозрачная */
+}
+.projects .projects_nav .project_nav_point:hover {
+  border-bottom: 3px solid #00E016;
+}
+.projects .projects_nav .project_nav_point.active {
+  background-color: #2E025B;
+  color: white;
+}
+.projects .projects_pictures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 1.6667vw;
+  row-gap: 1.6667vw;
+  margin: 1.6667vw 5vw;
+}
+.projects .projects_pictures .projects_show > img {
+  border-radius: 8px;
+  max-width: 430px;
+  z-index: 0;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  /* IE 6-9 */
+}
+.projects .projects_pictures .projects_show > img:hover {
+  z-index: 0;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+}
+@media screen and (max-width: 800px) {
+  .projects .projects_pictures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.projects .projects_load {
+  display: flex;
+  width: 13.6111vw;
+  height: 3.3333vw;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+  color: #141414;
+  margin: 1.6667vw 43.1944vw 3.3333vw 43.1944vw;
+  border: 0px solid #00E016;
+  background-color: #DDDDDD;
+}
+.projects .projects_load:hover {
+  border-bottom: 3px solid #00E016;
+  transition: border-bottom 100ms ease-in-out;
+}
+.block-bigger-margin {
+  margin-top: 4.5rem;
+}
+.last-block {
+  margin-bottom: 3rem;
+}
+.skills,
+.experience {
+  background-color: #141414;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5vw;
+  align-items: center;
+}
+.skills .skills_content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  column-gap: 1.5rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+.skills .skills_content .skills_list {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+  color: #BBBBBB;
+  font-size: 1.5rem;
+  align-self: center;
+}
+.skills .skills_content .skills_video {
+  max-width: 51.8056vw;
+  border-radius: 8px;
+}
+.education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 5vw;
+}
+.education .education_universities {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: auto auto;
+  margin-top: 3rem;
+}
+.education .education_universities > p {
+  align-self: center;
+  color: #2E025B;
+}
+.education .education_universities .education_name {
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+.education .education_universities .education_date {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+}
+.education .education_universities .education_specialty {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.education .education_picture {
+  display: flex;
+  padding: 2.2222vw 3.3333vw;
+  background-image: url(img/hanze.webp);
+  background-size: cover;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: end;
+  border-radius: 8px;
+  height: 312px;
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  color: #fff;
+}
+.experience {
+  background-color: #DDDDDD;
+  gap: 3.3333vw;
+}
+.experience .experience_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.experience .experience_content .experience_list {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #2E025B;
+}
+.experience .experience_content .experience_image {
+  background-image: url(img/senya_igrovoy.jpg);
+  background-size: cover;
+  min-width: 51.8056vw;
+  height: 31.6667vw;
+  border-radius: 8px;
+}
+.other {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.other .other_grid {
+  display: grid;
+  grid-template-columns: 2.26fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+}
+.other .other_grid > h5 {
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  color: #2E025B;
+  justify-self: center;
+}
+.other .other_grid .other_lang_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.other .other_grid .other_lang_container .other_languages {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.other .other_grid .other_lang_container .other_languages > span {
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  color: #2E025B;
+}
+.other .other_grid .other_lang_container .other_languages > span.other_level {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #2E025B;
+}
+.other .other_grid .other_hobbies {
+  display: inline-block;
+  text-align: center;
+  list-style-type: none;
+  padding: 0px;
+}
+.other .other_grid .other_hobbies > li {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #2E025B;
+}
+.other .other_grid .other_international {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #2E025B;
+  text-align: center;
+}
+.contacts {
+  background-color: #141414;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 12rem;
+}
+.contacts .contacts_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 9.3056vw;
+  align-items: center;
+}
+.contacts .contacts_grid .contacts_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #BBBBBB;
+  border-radius: 8px;
+}
+.contacts .contacts_grid .contacts_form > textarea {
+  max-width: 100%;
+  resize: none;
+}
+.contacts .contacts_grid .contacts_form > button[type=submit] {
+  border: 1px solid #00E016;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: #BBBBBB;
+}
+.contacts .contacts_grid .contacts_form .contacts_input {
+  width: 480px;
+  height: 72px;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #BBBBBB;
+  background-color: #141414;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #BBBBBB;
+}
+.contacts .contacts_grid .contacts_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6667vw;
+}
+.contacts .contacts_grid .contacts_container .contact {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6667vw;
+  align-items: center;
+}
+.contacts .contacts_grid .contacts_container .contacts_icons {
+  display: flex;
+  flex-direction: column;
+  width: 4.1667vw;
+}
+.contacts .contacts_grid .contacts_container .contacts_links {
+  display: flex;
+  flex-direction: column;
+}
+.contacts .contacts_grid .contacts_container .contacts_link {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #BBBBBB;
+  text-decoration-line: none;
+}
