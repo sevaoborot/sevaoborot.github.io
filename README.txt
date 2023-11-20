@@ -1,0 +1,1 @@
+<div class="projects_show all 3D code narrative"> оставлять all + ту секцию, к которой относитя пост
