@@ -369,13 +369,13 @@ header {
   line-height: 150%;
   color: #2E025B;
 }
-.experience .experience_content .experience_image {
-  background-image: url(img/senya_igrovoy.jpg);
-  background-size: cover;
-  min-width: 51.8056vw;
-  height: 31.6667vw;
-  border-radius: 8px;
-}
+    .experience .experience_content .experience_image {
+        background-image: url(img/meworking.jpg);
+        background-size: cover;
+        min-width: 51.8056vw;
+        height: 31.6667vw;
+        border-radius: 8px;
+    }
 .other {
   display: flex;
   flex-direction: column;
