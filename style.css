@@ -85,7 +85,7 @@ header {
   flex-direction: column;
   width: 88vw;
   height: 384px;
-  background: url("img/welcome_bg.png"), lightgray 50% / cover no-repeat;
+  background: url("img/background.png"), lightgray 50% / cover no-repeat;
   background-size: cover;
   justify-content: center;
   align-items: center;
