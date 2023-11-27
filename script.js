@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const imageArray = [
-    {
+    /*{
       src: "img\\vrgame.png",
       link: "https://youtu.be/8J2VWYr6iuw",
       categories: ["all", "3D", "code"]
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link: "https://www.artstation.com/artwork/QXP5dx",
       categories: ["all", "3D"]
     },
-    /*{
+    {
       src: "img\\small table.png",
       link: "https://example.com/page3",
       categories: ["all", "3D"]
