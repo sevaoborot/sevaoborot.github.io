@@ -150,8 +150,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 3rem;
-  margin-bottom: 0px;
+  margin: 3rem auto 0;
   width: 44vw;
   height: 8.3333vw;
 }
@@ -352,54 +351,66 @@ header {
   line-height: 150%;
 }
 .education .education_picture {
-  display: flex;
-  padding: 2.2222vw 3.3333vw;
-  background-image: url(img/hanze.webp);
-  background-size: cover;
-  box-sizing: border-box;
-  width: 100%;
-  align-items: end;
-  border-radius: 8px;
-  height: 312px;
-  font-family: "Open Sans:700", sans-serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
-  color: #fff;
+  display: none;
 }
 .experience {
   background-color: #DDDDDD;
-  gap: 3.3333vw;
-}
-.experience .experience_content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  padding: 0px 5vw;
+  padding-bottom: 3rem;
 }
-.experience .experience_content .experience_list {
-  font-family: "Open Sans:400", sans-serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
+.experience .experience_jobs {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: auto auto;
+  margin-top: 3rem;
+  width: 100%;
+}
+.experience .experience_jobs > p {
+  align-self: center;
   color: #2E025B;
 }
-.experience .experience_content .experience_image {
-  background-image: url(img/meworking.jpg);
-  background-size: cover;
-  min-width: 51.8056vw;
-  height: 31.6667vw;
-  border-radius: 8px;
+.experience .experience_jobs .experience_role {
+  font-family: "Open Sans:700", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+.experience .experience_jobs .experience_date {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0px;
+}
+.experience .experience_jobs .experience_place {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+.experience .experience_jobs .experience_desc {
+  grid-column: 1 / -1;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 1rem;
+  border-left: 3px solid #2E025B;
+  padding-left: 1rem;
 }
 .other {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px 5vw 3rem;
 }
 .other .other_grid {
   display: grid;
   grid-template-columns: 2.26fr 1fr 1fr;
+  width: 100%;
   grid-template-rows: auto auto;
   align-items: center;
   justify-items: center;
@@ -499,7 +510,7 @@ header {
 }
 .contacts .contacts_grid .contacts_form .contacts_input {
   width: 480px;
-  height: 72px;
+  height: 52px;
   padding: 10px;
   align-items: center;
   gap: 10px;
@@ -513,6 +524,10 @@ header {
   font-weight: 400;
   line-height: 150%;
   color: #BBBBBB;
+}
+.contacts .contacts_grid .contacts_form textarea.contacts_input {
+  height: 120px;
+  resize: none;
 }
 .contacts .contacts_grid .contacts_container {
   display: flex;
