@@ -6,12 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     projectItems.forEach((item) => {
       const categories = item.classList;
       const shouldDisplay = filterValue === "all" || categories.contains(filterValue);
-
-      if (shouldDisplay) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+      item.style.display = shouldDisplay ? "block" : "none";
     });
   }
 
@@ -24,42 +19,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const imageArray = [
-    /*{
-      src: "img\\vrgame.png",
-      link: "https://youtu.be/8J2VWYr6iuw",
-      categories: ["all", "3D", "code"]
-    },
-    {
-      src: "img\\myfirstcharacter.jpg",
-      link: "https://www.artstation.com/artwork/QXP5dx",
-      categories: ["all", "3D"]
-    },
-    {
-      src: "img\\small table.png",
-      link: "https://example.com/page3",
-      categories: ["all", "3D"]
-    },*/
-    // и так далее
-  ];
+  // Modal logic
+  const modal = document.getElementById("projectModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const modalLink = document.getElementById("modalLink");
+  const modalClose = document.getElementById("modalClose");
 
-  const projectsPictures = document.querySelector(".projects_pictures");
+  projectItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      modalImg.src = item.dataset.img;
+      modalImg.alt = item.dataset.title;
+      modalTitle.textContent = item.dataset.title;
+      modalDesc.textContent = item.dataset.desc;
+      modalLink.href = item.dataset.link;
+      modal.classList.add("active");
+    });
+  });
 
-  imageArray.forEach((image) => {
-    const imageContainer = document.createElement("div");
-    imageContainer.classList.add("projects_show");
-    imageContainer.classList.add(...image.categories);
-
-    const linkElement = document.createElement("a");
-    linkElement.href = image.link;
-
-    const imgElement = document.createElement("img");
-    imgElement.src = image.src;
-    imgElement.alt = "Project Image";
-
-    linkElement.appendChild(imgElement);
-    imageContainer.appendChild(linkElement);
-    projectsPictures.appendChild(imageContainer);
+  modalClose.addEventListener("click", () => modal.classList.remove("active"));
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("active");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.classList.remove("active");
   });
 
   updateDisplayedItems(document.querySelector(".project_nav_point.active").getAttribute("data-filter"));

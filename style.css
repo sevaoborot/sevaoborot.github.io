@@ -243,6 +243,13 @@ header {
   -ms-filter: none;
   filter: none;
 }
+.projects .projects_pictures .projects_show div h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.17rem;
+  font-weight: 700;
+  color: #141414;
+  margin: 0.4rem 0 0;
+}
 @media screen and (max-width: 800px) {
   .projects .projects_pictures {
     grid-template-columns: repeat(2, 1fr);
@@ -547,4 +554,107 @@ a {
 }
 a:hover h3 {
   color: #2E025B;
+}
+
+/* PROJECT CARDS - clickable, no longer <a> wrappers */
+.projects_show {
+  cursor: pointer;
+  display: block;
+}
+.projects .projects_pictures .projects_show > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* MODAL */
+.project-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.project-modal-overlay.active {
+  display: flex;
+}
+.project-modal {
+  background: #1c1c1c;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px;
+  width: 90vw;
+  max-height: 85vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+  animation: modalIn 0.2s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.project-modal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(30%);
+}
+.project-modal__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+}
+.project-modal__title {
+  font-family: "Inter:800", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00E016;
+  text-transform: uppercase;
+  margin: 0;
+}
+.project-modal__desc {
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #BBBBBB;
+  margin: 0;
+}
+.project-modal__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: "Open Sans:400", sans-serif;
+  font-size: 1rem;
+  color: #BBBBBB;
+  border-bottom: 2px solid #00E016;
+  padding-bottom: 2px;
+  text-decoration: none;
+  width: fit-content;
+  transition: color 0.15s;
+}
+.project-modal__link:hover {
+  color: #00E016;
+}
+.project-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #BBBBBB;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.project-modal__close:hover {
+  color: #00E016;
 }
