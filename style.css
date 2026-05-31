@@ -411,11 +411,17 @@ header {
   display: grid;
   grid-template-columns: 2.26fr 1fr 1fr;
   width: 100%;
-  grid-template-rows: auto auto;
-  align-items: center;
+  align-items: start;
   justify-items: center;
 }
-.other .other_grid > h5 {
+.other .other_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.other .other_grid > .other_group > h5 {
   font-family: "Open Sans:700", sans-serif;
   font-size: 1.5rem;
   font-style: normal;
@@ -672,4 +678,237 @@ a:hover h3 {
 }
 .project-modal__close:hover {
   color: #00E016;
+}
+
+/* ===================== MOBILE (max-width: 480px) ===================== */
+@media screen and (max-width: 480px) {
+
+  /* HEADER */
+  header {
+    height: auto;
+    padding: 0.75rem 1rem;
+  }
+  .header_links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    height: auto;
+    justify-content: center;
+  }
+  .header_links a {
+    font-size: 0.85rem;
+  }
+
+  /* WELCOME */
+  .welcome {
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 1rem;
+  }
+  .welcome .welcome_image {
+    width: 92vw;
+    height: auto;
+    padding: 2.5rem 1rem;
+  }
+  .welcome .welcome_image .welcome_heading {
+    font-size: 2rem;
+  }
+  .welcome .welcome_image .welcome_subheading {
+    font-size: 1.2rem;
+  }
+
+  /* WHO I AM */
+  .who-i-am {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
+    column-gap: 0;
+    row-gap: 1.5rem;
+  }
+  .who-i-am .who-i-am_image {
+    width: 100%;
+  }
+  .who-i-am .who-i-am_container {
+    width: 100%;
+  }
+  .who-i-am .who-i-am_container .who-i-am_heading {
+    font-size: 2rem;
+  }
+
+  /* HEADING CONTAINER */
+  .heading_container {
+    width: 90vw;
+    height: auto;
+    min-height: 5rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem auto 0;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+  }
+  .heading_text {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  /* PROJECTS */
+  .projects .projects_nav {
+    width: 90vw;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0.5rem;
+    margin: 1rem auto;
+  }
+  .projects .projects_pictures {
+    grid-template-columns: 1fr;
+    margin: 1rem 1.25rem;
+    row-gap: 1.25rem;
+  }
+
+  /* SKILLS & QUALITIES */
+  .skills {
+    padding: 0 1.25rem;
+  }
+  .skills .skills_content {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+  }
+  .skills .skills_content .skills_video {
+    display: none;
+  }
+  .skills .skills_content .skills_list {
+    font-size: 1.1rem;
+    padding-left: 1.25rem;
+  }
+  .last-block {
+    margin-bottom: 2rem;
+  }
+
+  /* EDUCATION */
+  .education {
+    padding: 0 1.25rem;
+  }
+  .education .education_universities {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+    row-gap: 0.25rem;
+  }
+  .education .education_universities .education_name {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+  }
+  .education .education_universities .education_date {
+    font-size: 0.9rem;
+  }
+  .education .education_universities .education_specialty {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* EXPERIENCE */
+  .experience {
+    padding: 0 1.25rem 2rem;
+  }
+  .experience .experience_jobs {
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+    row-gap: 0.25rem;
+  }
+  .experience .experience_jobs .experience_role {
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
+  .experience .experience_jobs .experience_date {
+    font-size: 0.9rem;
+  }
+  .experience .experience_jobs .experience_place {
+    font-size: 1rem;
+  }
+  .experience .experience_jobs .experience_desc {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+  }
+
+  /* OTHER */
+  .other {
+    padding: 0 1.25rem 2rem;
+  }
+  .other .other_grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+  .other .other_group {
+    align-items: flex-start;
+  }
+  .other .other_grid > .other_group > h5,
+  .other .other_group .other_grid_heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2E025B;
+    margin: 0 0 0.25rem;
+  }
+  .other .other_grid .other_lang_container .other_languages > span {
+    font-size: 1.1rem;
+  }
+  .other .other_grid .other_lang_container .other_languages .other_image {
+    display: none;
+  }
+  .other .other_grid .other_lang_container .other_languages {
+    gap: 0.5rem;
+  }
+  .other .other_grid .other_hobbies {
+    text-align: left;
+  }
+  .other .other_grid .other_hobbies > li {
+    font-size: 1.1rem;
+  }
+  .other .other_grid .other_international {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  /* CONTACTS */
+  .contacts {
+    padding-bottom: 4rem;
+  }
+  .contacts .contacts_grid {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 0 1.25rem;
+  }
+  .contacts .contacts_grid .contacts_form .contacts_input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    height: 44px;
+  }
+  .contacts .contacts_grid .contacts_form textarea.contacts_input {
+    height: 100px;
+  }
+  .contacts .contacts_grid .contacts_container .contacts_icons {
+    width: 8vw;
+  }
+  .contacts .contacts_grid .contacts_container .contacts_link {
+    font-size: 1rem;
+  }
+
+  /* MODAL */
+  .project-modal {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .project-modal__img {
+    max-height: 220px;
+    object-fit: cover;
+  }
+  .project-modal__info {
+    padding: 1.25rem;
+  }
+  .project-modal__title {
+    font-size: 1.1rem;
+  }
+  .project-modal__desc {
+    font-size: 0.9rem;
+  }
 }
